@@ -44,6 +44,6 @@ Copia y pega el siguiente comando para generar el reporte:
 jmeter -g "..\..\ScriptCarga\results.jtl" -o "..\..\ScriptCarga\reporte_html"
 Una vez finalizado el proceso, el reporte HTML estará disponible en el archivo index.html dentro de la carpeta reporte_html.
 
-Nota: Reemplaza CaroFel con tu nombre de usuario si es diferente. El uso de rutas relativas (..\..\) hace que los comandos sean más portables, siempre y cuando la estructura de carpetas (JMeter y tu proyecto en el escritorio) se mantenga.
+Nota: Reemplaza CaroFel con tu nombre de usuario. El uso de rutas relativas (..\..\) hace que los comandos sean más portables, siempre y cuando la estructura de carpetas (JMeter y tu proyecto en el escritorio) se mantenga.
 
 
