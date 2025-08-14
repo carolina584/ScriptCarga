@@ -94,6 +94,7 @@ JSON
   "username": "${username}",
   "password": "${password}"
 }
+
 5. Agregar un HTTP Header Manager
 Haz clic derecho en UserLoadData -> Add -> Config Element -> HTTP Header Manager.
 
