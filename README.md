@@ -4,7 +4,6 @@ Prueba de Carga del Servicio de Login
 -
 Este repositorio contiene los artefactos para realizar una prueba de carga al servicio de login de fakestoreapi.com.
 
-
 Tecnologías Utilizadas:
 -
 Apache JMeter v5.6.2
@@ -35,15 +34,10 @@ jmeter -g "ruta/a/results.jtl" -o "ruta/a/reporte_html"
 Comando 1: jmeter -n -t ... -l ... -e -o ...
 -
 Este comando se usa para ejecutar una prueba de carga completa desde la línea de comandos (-n).
-
 -n: Indica que es una ejecución no-GUI.
-
 -t: Especifica el archivo del plan de prueba (.jmx) que se va a ejecutar.
-
 -l: Le dice a JMeter que guarde los resultados de la prueba en un archivo (.jtl) durante la ejecución.
-
 -e: Indica que se debe generar un reporte HTML después de que la prueba termine.
-
 -o: Especifica la carpeta de salida para el reporte HTML.
 
 -------------------------------------------------------------------------------------
@@ -52,9 +46,12 @@ Comando 2: jmeter -g "ruta/a/results.jtl" -o "ruta/a/reporte_html"
 Este comando NO ejecuta una prueba. Se usa para generar un reporte HTML a partir de un archivo de resultados (.jtl) ya existente.
 
 -g: Le dice a JMeter que tome los datos de un archivo .jtl ya creado.
-
 -o: Especifica la carpeta donde se debe guardar el nuevo reporte HTML.
 
+En resumen:
+-
+Usa el Comando 1 para correr la prueba y guardar los resultados.
+Usa el Comando 2 para analizar los resultados de una prueba que ya se ejecutó, creando un reporte HTML a partir del archivo .jtl generado.
 Al finalizar, la carpeta reporte_html y el archivo results.jtl contendrán el informe completo de la prueba.
 
 
