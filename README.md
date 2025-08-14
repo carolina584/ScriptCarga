@@ -9,6 +9,7 @@ Tecnologías Utilizadas:
 Apache JMeter v5.6.2
 Java JDK v1.8.0_291
 
+
 Archivos del Proyecto
 UserLoadData.jmx: Script de la prueba de carga de JMeter.
 users.csv: Archivo con los datos de usuarios para la parametrización.
