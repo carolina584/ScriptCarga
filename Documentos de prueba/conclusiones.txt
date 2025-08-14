@@ -1,0 +1,35 @@
+-------------------------------------------------------------------------
+La prueba de carga del servicio de login se ejecutó con éxito, cumpliendo el objetivo de TPS. Sin embargo, el análisis de los resultados muestra que el servicio no cumple con los criterios de rendimiento de tiempo de respuesta y tasa de error. La prueba reveló que, bajo una carga de 20 usuarios, el servicio presenta una degradación significativa del rendimiento, con un tiempo promedio de respuesta que excede el límite permitido y una alta tasa de fallos.
+
+1. Objetivos de la Prueba
+TPS (Transacciones por Segundo): Alcanzar al menos 20 TPS.
+
+Tiempo de Respuesta: Máximo 1,5 segundos (1500 ms) por petición.
+
+Tasa de Error: Menor al 3% del total de peticiones.
+
+2. Resultados Obtenidos
+Métrica	Objetivo	Resultado	Conclusión
+TPS	>= 20/seg	33.12/seg	✅ Cumple
+Tiempo de Respuesta	< 1,500 ms	Promedio: 2,233 ms	❌ No Cumple
+Tasa de Error	< 3%	16.57%	❌ No Cumple
+
+Duración de la Prueba: 7 minutos (10:34 AM - 10:41 AM).
+
+Total de Peticiones: 1408.
+
+APDex Score: 0.799 (con umbrales de 500 ms satisfactorio y 1500 ms frustrante).
+
+3. Análisis de Conclusiones
+Rendimiento de Carga (TPS): La prueba demuestra que el servicio es capaz de procesar un volumen de peticiones que supera el objetivo mínimo de 20 TPS.
+
+Tiempo de Respuesta: Este es el punto más crítico de la prueba. El tiempo promedio de respuesta (2,233 ms) está muy por encima del límite de 1,5 segundos. La Duration Assertion configurada en el script capturó con éxito estas fallas, lo que se refleja en el alto porcentaje de errores. El listado de errores muestra que las peticiones están tardando entre 1,501 ms y más de 2,700 ms, lo que indica un problema de rendimiento generalizado bajo la carga.
+
+Tasa de Error: La tasa de error del 16.57% es una consecuencia directa de las fallas en el tiempo de respuesta. Este porcentaje está muy por encima del 3% aceptable, lo que confirma que el servicio no es confiable bajo la carga de 20 usuarios.
+
+4. Recomendaciones
+El servicio de login no cumple con los criterios de rendimiento establecidos. Se recomienda:
+
+Identificar el cuello de botella: Utilizar herramientas de monitoreo del servidor o revisar los logs de la aplicación para determinar qué componente (código, base de datos, red, etc.) es el que causa el aumento en el tiempo de respuesta.
+
+Optimizar el servicio: Trabajar en la optimización del código del login o de la configuración del servidor para reducir los tiempos de respuesta por debajo de los 1,5 segundos, y luego volver a ejecutar la prueba de carga.
