@@ -134,3 +134,17 @@ View Results Tree: Para ver el resultado de cada petición (útil para depurar).
 
 Con estos pasos, tendrás un plan de prueba completo y funcional en JMeter.
 -
+Nota importante:
+-
+
+Cuando ejecutas una prueba desde la herramienta (el botón Run del GUI), JMeter no actualiza automáticamente los archivos de resultados (results.jtl) ni genera el reporte HTML (index.html) por una razón importante: el modo gráfico está diseñado para crear y depurar la prueba, no para ejecutarla a gran escala.
+
+La generación de reportes y la escritura en archivos consume muchos recursos de tu computadora, por lo que JMeter los deshabilita por defecto en modo GUI para que no afecten el rendimiento de tu prueba.
+
+Los archivos (.jtl y index.html) solo se actualizan cuando usas el comando de la línea de comandos, porque ahí le estás dando las instrucciones específicas para que lo haga:
+
+El flag -l (-l results.jtl) le dice a JMeter que guarde los resultados de la prueba en ese archivo.
+
+Los flags -e y -o (-e -o reporte_html) le dicen que genere el reporte HTML a partir de ese archivo .jtl una vez que la prueba termine.
+
+En resumen, la única forma de generar un nuevo reporte es usando el comando de la línea de comandos, ya que el modo GUI no tiene esa funcionalidad por defecto.
