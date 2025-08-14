@@ -1,5 +1,5 @@
 # ScriptCarga
-Auto de script carga
+Auto de script carga login
 
  ejecutar la prueba de rendimiento y generar el reporte
  -
