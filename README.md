@@ -1,49 +1,60 @@
 # ScriptCarga
-Auto de script carga login
 
- ejecutar la prueba de rendimiento y generar el reporte
- -
- Pre-requisitos:
+Prueba de Carga del Servicio de Login
 -
-Tener Apache JMeter instalado y configurado.
+Este repositorio contiene los artefactos para realizar una prueba de carga al servicio de login de fakestoreapi.com.
 
-Tener los archivos de la prueba (.jmx, .csv) ubicados en la carpeta ScriptCarga en el escritorio (C:\Users\[TuUsuario]\Desktop\ScriptCarga).
 
-La carpeta de JMeter (apache-jmeter-5.6.3) se encuentra en el escritorio (C:\Users\[TuUsuario]\Desktop\apache-jmeter-5.6.3).
-
-Opción 1: Ejecutar la prueba y generar el reporte en un solo comando
-Esta es la forma más directa y recomendada. Ejecutará la prueba y, al finalizar, generará automáticamente el reporte HTML.
-
-Abre la consola de comandos de Windows (CMD).
-
-Navega al directorio bin de JMeter ejecutando el siguiente comando:
-
-cd C:\Users\CaroFel\Desktop\apache-jmeter-5.6.3\bin
-Asegúrate de que no exista la carpeta de reporte de pruebas anterior (reporte_html) en tu directorio de proyecto (C:\Users\CaroFel\Desktop\ScriptCarga).
-
-Copia y pega el siguiente comando para ejecutar la prueba y generar el reporte:
-
-jmeter -n -t "..\..\ScriptCarga\CSV Data Set Config.jmx" -l "..\..\ScriptCarga\results.jtl" -e -o "..\..\ScriptCarga\reporte_html"
-Una vez finalizada la prueba, el reporte HTML estará disponible en el archivo index.html dentro de la carpeta reporte_html.
-
-Opción 2: Generar el reporte a partir de un archivo de resultados existente
-Esta opción es útil si ya has ejecutado la prueba previamente y solo necesitas generar el reporte HTML a partir del archivo results.jtl.
-
-Abre la consola de comandos de Windows (CMD).
-
-Navega al directorio bin de JMeter ejecutando el siguiente comando:
-
-cd C:\Users\CaroFel\Desktop\apache-jmeter-5.6.3\bin
-Asegúrate de que el archivo results.jtl exista en tu carpeta de proyecto (C:\Users\CaroFel\Desktop\ScriptCarga).
-
-la carpeta de reporte de pruebas anterior no exista (reporte_html). Si existe, bórrala o cámbiale el nombre.
-
-Copia y pega el siguiente comando para generar el reporte:
+Tecnologías Utilizadas:
 -
+Apache JMeter v5.6.2
+Java JDK v1.8.0_291
 
-jmeter -g "..\..\ScriptCarga\results.jtl" -o "..\..\ScriptCarga\reporte_html"
-Una vez finalizado el proceso, el reporte HTML estará disponible en el archivo index.html dentro de la carpeta reporte_html.
+Archivos del Proyecto
+UserLoadData.jmx: Script de la prueba de carga de JMeter.
+users.csv: Archivo con los datos de usuarios para la parametrización.
+resultados.jtl: Archivo de resultados de la ejecución de JMeter.
+reporte_html/: Carpeta con el reporte HTML de la prueba.
+conclusiones.txt: Archivo con el análisis de los resultados.
 
-Nota: Reemplaza CaroFel con tu nombre de usuario. El uso de rutas relativas (..\..\) hace que los comandos sean más portables, siempre y cuando la estructura de carpetas (JMeter y tu proyecto en el escritorio) se mantenga.
+Instrucciones de Ejecución
+-
+Asegúrate de tener instalado Java JDK (versión 8 o superior) y Apache JMeter (versión 5.6.2 o superior).
+Coloca los archivos UserLoadData.jmx y users.csv en la misma carpeta. Ejemplo: C:\ruta\a\tu\carpeta\ScriptCarga.
+Abre una terminal y navega hasta esa carpeta con el comando cd.
+
+Ejecuta el siguiente comando para iniciar la prueba de carga y generar el reporte:
+
+jmeter -n -t "ruta/a/tu/script/UserLoadData.jmx" -l "ruta/a/tu/archivo/results.jtl" -e -o "ruta/a/tu/carpeta/reporte_html"
+-
+Comando 2: jmeter -g "ruta/a/results.jtl" -o "ruta/a/reporte_html"
+
+jmeter -g "ruta/a/results.jtl" -o "ruta/a/reporte_html"
+-
+------------------------------------------------------------------------------------------
+Comando 1: jmeter -n -t ... -l ... -e -o ...
+-
+Este comando se usa para ejecutar una prueba de carga completa desde la línea de comandos (-n).
+
+-n: Indica que es una ejecución no-GUI.
+
+-t: Especifica el archivo del plan de prueba (.jmx) que se va a ejecutar.
+
+-l: Le dice a JMeter que guarde los resultados de la prueba en un archivo (.jtl) durante la ejecución.
+
+-e: Indica que se debe generar un reporte HTML después de que la prueba termine.
+
+-o: Especifica la carpeta de salida para el reporte HTML.
+
+-------------------------------------------------------------------------------------
+Comando 2: jmeter -g "ruta/a/results.jtl" -o "ruta/a/reporte_html"
+-
+Este comando NO ejecuta una prueba. Se usa para generar un reporte HTML a partir de un archivo de resultados (.jtl) ya existente.
+
+-g: Le dice a JMeter que tome los datos de un archivo .jtl ya creado.
+
+-o: Especifica la carpeta donde se debe guardar el nuevo reporte HTML.
+
+Al finalizar, la carpeta reporte_html y el archivo results.jtl contendrán el informe completo de la prueba.
 
 
