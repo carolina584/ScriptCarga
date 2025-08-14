@@ -50,8 +50,7 @@ Este comando NO ejecuta una prueba. Se usa para generar un reporte HTML a partir
 
 En resumen:
 -
-Usa el Comando 1 para correr la prueba y guardar los resultados.
-Usa el Comando 2 para analizar los resultados de una prueba que ya se ejecutó, creando un reporte HTML a partir del archivo .jtl generado.
+Comando 1: para correr la prueba y guardar los resultados.
+Comando 2: para analizar los resultados de una prueba que ya se ejecutó, creando un reporte HTML a partir del archivo .jtl generado.
+
 Al finalizar, la carpeta reporte_html y el archivo results.jtl contendrán el informe completo de la prueba.
-
-
