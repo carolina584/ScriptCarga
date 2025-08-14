@@ -12,9 +12,9 @@ Java JDK v1.8.0_291
 Archivos del Proyecto
 UserLoadData.jmx: Script de la prueba de carga de JMeter.
 users.csv: Archivo con los datos de usuarios para la parametrización.
-resultados.jtl: Archivo de resultados de la ejecución de JMeter.
+results.jtl: Archivo de resultados de la ejecución de JMeter.
 reporte_html/: Carpeta con el reporte HTML de la prueba.
-conclusiones.txt: Archivo con el análisis de los resultados.
+Documentos de prueba: conclusiones.txt: Archivo con el análisis de los resultados, evidencias ejecucion, etc
 
 Instrucciones de Ejecución
 -
@@ -22,7 +22,7 @@ Asegúrate de tener instalado Java JDK (versión 8 o superior) y Apache JMeter (
 Coloca los archivos UserLoadData.jmx y users.csv en la misma carpeta. Ejemplo: C:\ruta\a\tu\carpeta\ScriptCarga.
 Abre una terminal y navega hasta esa carpeta con el comando cd.
 
-Ejecuta el siguiente comando para iniciar la prueba de carga y generar results.jtl:
+Ejecuta el siguiente comando1 para iniciar la prueba de carga y generar results.jtl:
 
 jmeter -n -t "ruta/a/tu/script/UserLoadData.jmx" -l "ruta/a/tu/archivo/results.jtl" -e -o "ruta/a/tu/carpeta/reporte_html"
 -
