@@ -22,7 +22,7 @@ Asegúrate de tener instalado Java JDK (versión 8 o superior) y Apache JMeter (
 Coloca los archivos UserLoadData.jmx y users.csv en la misma carpeta. Ejemplo: C:\ruta\a\tu\carpeta\ScriptCarga.
 Abre una terminal y navega hasta esa carpeta con el comando cd.
 
-Ejecuta el siguiente comando para iniciar la prueba de carga y generar el reporte:
+Ejecuta el siguiente comando para iniciar la prueba de carga y generar results.jtl:
 
 jmeter -n -t "ruta/a/tu/script/UserLoadData.jmx" -l "ruta/a/tu/archivo/results.jtl" -e -o "ruta/a/tu/carpeta/reporte_html"
 -
